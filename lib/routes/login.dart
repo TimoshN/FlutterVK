@@ -1,5 +1,6 @@
 import "dart:async";
 
+import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:go_router/go_router.dart";
 import "package:hooks_riverpod/hooks_riverpod.dart";
@@ -126,7 +127,7 @@ class LoginRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (isMobile) {
+    if (isMobile && !kIsAurora) {
       return MobileLoginWidget(
         useAlternateAuth: useAlternateAuth,
       );

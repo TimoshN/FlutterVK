@@ -8,7 +8,7 @@ import "package:flutter_localizations/flutter_localizations.dart";
 import "package:gap/gap.dart";
 import "package:hooks_riverpod/hooks_riverpod.dart";
 import "package:local_notifier/local_notifier.dart";
-import "package:universal_back_gesture/back_gesture_page_transitions_builder.dart";
+// import "package:universal_back_gesture/back_gesture_page_transitions_builder.dart";
 import "package:url_launcher/url_launcher.dart";
 import "package:window_manager/window_manager.dart";
 
@@ -195,11 +195,11 @@ class FlutterVKApp extends HookConsumerWidget {
 
         final pageTransitions = PageTransitionsTheme(
           builders: {
-            for (final platform in TargetPlatform.values)
-              platform: const BackGesturePageTransitionsBuilder(
-                parentTransitionBuilder:
-                    SharedAxisHorizontalPageTransitionsBuilder(),
-              ),
+            // for (final platform in TargetPlatform.values)
+            //   platform: BackGesturePageTransitionsBuilder(
+            //     parentTransitionBuilder:
+            //         SharedAxisHorizontalPageTransitionsBuilder(),
+            //   ),
           },
         );
 

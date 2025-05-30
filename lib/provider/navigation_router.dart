@@ -3,8 +3,8 @@ import "package:flutter/material.dart";
 import "package:go_router/go_router.dart";
 import "package:hooks_riverpod/hooks_riverpod.dart";
 import "package:riverpod_annotation/riverpod_annotation.dart";
-import "package:universal_back_gesture/back_gesture_config.dart";
-import "package:universal_back_gesture/back_gesture_page_transitions_builder.dart";
+// import "package:universal_back_gesture/back_gesture_config.dart";
+// import "package:universal_back_gesture/back_gesture_page_transitions_builder.dart";
 
 import "../main.dart";
 import "../routes/login.dart";
@@ -50,71 +50,71 @@ part "navigation_router.g.dart";
 /// Расширение для [MaterialPageRoute], которое добавляет поддержку [BackGestureConfig], используемая для навигации назад с помощью жеста.
 ///
 /// Взято из [документации universal_back_gesture](https://pub.dev/packages/universal_back_gesture#2-configuration-for-individual-routes).
-class CustomBackGesturePageRoute extends MaterialPageRoute {
-  final BackGestureConfig config;
+// class CustomBackGesturePageRoute extends MaterialPageRoute {
+//   final BackGestureConfig config;
 
-  final PageTransitionsBuilder parentTransitionBuilder;
+//   final PageTransitionsBuilder parentTransitionBuilder;
 
-  CustomBackGesturePageRoute({
-    required super.builder,
-    required this.config,
-    required this.parentTransitionBuilder,
-    super.settings,
-  });
+//   CustomBackGesturePageRoute({
+//     required super.builder,
+//     required this.config,
+//     required this.parentTransitionBuilder,
+//     super.settings,
+//   });
 
-  @override
-  Duration get transitionDuration => parentTransitionBuilder.transitionDuration;
+//   // @override
+//   // Duration get transitionDuration => parentTransitionBuilder.transitionDuration;
 
-  @override
-  Duration get reverseTransitionDuration =>
-      parentTransitionBuilder.reverseTransitionDuration;
+//   // @override
+//   // Duration get reverseTransitionDuration =>
+//   //     parentTransitionBuilder.reverseTransitionDuration;
 
-  @override
-  DelegatedTransitionBuilder? get delegatedTransition =>
-      parentTransitionBuilder.delegatedTransition;
+//   @override
+//   DelegatedTransitionBuilder? get delegatedTransition =>
+//       parentTransitionBuilder.delegatedTransition;
 
-  @override
-  Widget buildTransitions(
-    BuildContext context,
-    Animation<double> animation,
-    Animation<double> secondaryAnimation,
-    Widget child,
-  ) {
-    return BackGesturePageTransitionsBuilder(
-      parentTransitionBuilder: parentTransitionBuilder,
-      config: config,
-    ).buildTransitions(this, context, animation, secondaryAnimation, child);
-  }
-}
+//   @override
+//   Widget buildTransitions(
+//     BuildContext context,
+//     Animation<double> animation,
+//     Animation<double> secondaryAnimation,
+//     Widget child,
+//   ) {
+//     return BackGesturePageTransitionsBuilder(
+//       parentTransitionBuilder: parentTransitionBuilder,
+//       config: config,
+//     ).buildTransitions(this, context, animation, secondaryAnimation, child);
+//   }
+// }
 
 /// Расширение для [Page], которое добавляет поддержку [BackGestureConfig], используемая для навигации назад с помощью жеста.
 ///
 /// Взято из [документации universal_back_gesture](https://pub.dev/packages/universal_back_gesture#2-configuration-for-individual-routes).
-class MyCustomGoRouterPage extends Page {
-  const MyCustomGoRouterPage({
-    required this.child,
-    this.parentTransitionBuilder = const FadeUpwardsPageTransitionsBuilder(),
-    this.config = const BackGestureConfig(),
-    super.key,
-    super.name,
-    super.arguments,
-    super.restorationId,
-  });
+// class MyCustomGoRouterPage extends Page {
+//   const MyCustomGoRouterPage({
+//     required this.child,
+//     this.parentTransitionBuilder = const FadeUpwardsPageTransitionsBuilder(),
+//     this.config = const BackGestureConfig(),
+//     super.key,
+//     super.name,
+//     super.arguments,
+//     super.restorationId,
+//   });
 
-  final Widget child;
-  final PageTransitionsBuilder parentTransitionBuilder;
-  final BackGestureConfig config;
+//   final Widget child;
+//   final PageTransitionsBuilder parentTransitionBuilder;
+//   final BackGestureConfig config;
 
-  @override
-  Route createRoute(BuildContext context) {
-    return CustomBackGesturePageRoute(
-      builder: (BuildContext context) => child,
-      settings: this,
-      parentTransitionBuilder: parentTransitionBuilder,
-      config: config,
-    );
-  }
-}
+//   @override
+//   Route createRoute(BuildContext context) {
+//     return CustomBackGesturePageRoute(
+//       builder: (BuildContext context) => child,
+//       settings: this,
+//       parentTransitionBuilder: parentTransitionBuilder,
+//       config: config,
+//     );
+//   }
+// }
 
 /// [GoRouter], используемый для навигации по приложению.
 @riverpod

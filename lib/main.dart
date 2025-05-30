@@ -210,7 +210,7 @@ Future main() async {
     HttpOverrides.global = HTTPOverrides();
 
     // Инициализируем Firebase (Analytics, Crashlytics) в release-режиме.
-    if (kReleaseMode && !isWeb) {
+    if (kReleaseMode && !isWeb && !kIsAurora) {
       await Firebase.initializeApp(
         options: DefaultFirebaseOptions.currentPlatform,
       );

@@ -171,7 +171,7 @@ bool get isWeb => kIsWeb;
 bool get isWindows => !isWeb && Platform.isWindows;
 
 /// Указывает, что приложение запущено на Linux.
-bool get isLinux => !isWeb && Platform.isWindows;
+bool get isLinux => !isWeb && Platform.isLinux;
 
 /// Указывает, что приложение запущено на macOS.
 bool get isMacOS => !isWeb && Platform.isMacOS;
@@ -188,14 +188,18 @@ bool get isiOS => !isWeb && Platform.isIOS;
 /// Platform.isWindows || Platform.isLinux || Platform.isMacOS
 /// ```
 bool get isDesktop =>
-    !isWeb && (Platform.isWindows || Platform.isLinux || Platform.isMacOS);
+    !isWeb &&
+    (Platform.isWindows ||
+        (Platform.isLinux && !kIsAurora) ||
+        Platform.isMacOS);
 
 /// Указывает, что приложение запущено на мобильной платформе.
 ///
 /// ```dart
 /// Platform.isAndroid || Platform.isIOS
 /// ```
-bool get isMobile => !isWeb && (Platform.isAndroid || Platform.isIOS);
+bool get isMobile =>
+    !isWeb && (Platform.isAndroid || Platform.isIOS || kIsAurora);
 
 /// Указывает, что используется Mobile Layout.
 bool isMobileLayout(BuildContext context) =>
