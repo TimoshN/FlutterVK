@@ -16,9 +16,17 @@ dependency_overrides:
       path: packages/path_provider_aurora
       ref: aurora-path_provider_aurora-0.6.1
   isar:
-    path: ./3rd_party/isar
+    # path: ./3rd_party/isar
+    git:
+      url: https://gitflic.ru/project/timosh/isar_aurora.git
+      path: isar
+      ref: 3.1.8
   isar_flutter_libs:
-    path: ./3rd_party/isar_flutter_libs
+    # path: ./3rd_party/isar_flutter_libs
+    git:
+      url: https://gitflic.ru/project/timosh/isar_aurora.git
+      path: isar_flutter_libs
+      ref: 3.1.8
 
 
 dependencies:

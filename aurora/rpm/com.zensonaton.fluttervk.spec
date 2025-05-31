@@ -4,7 +4,7 @@
 Name: com.zensonaton.fluttervk
 Summary: A new Flutter project.
 Version: 0.4.28
-Release: 1
+Release: 2
 License: Proprietary
 Source0: %{name}-%{version}.tar.zst
 

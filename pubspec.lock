@@ -867,17 +867,21 @@ packages:
   isar:
     dependency: "direct main"
     description:
-      path: "3rd_party/isar"
-      relative: true
-    source: path
-    version: "3.1.0+1"
+      path: isar
+      ref: "3.1.8"
+      resolved-ref: "683105d538f690e24985a6920b141da122d90b76"
+      url: "https://gitflic.ru/project/timosh/isar_aurora.git"
+    source: git
+    version: "3.1.8"
   isar_flutter_libs:
     dependency: "direct main"
     description:
-      path: "3rd_party/isar_flutter_libs"
-      relative: true
-    source: path
-    version: "3.1.0+1"
+      path: isar_flutter_libs
+      ref: "3.1.8"
+      resolved-ref: "683105d538f690e24985a6920b141da122d90b76"
+      url: "https://gitflic.ru/project/timosh/isar_aurora.git"
+    source: git
+    version: "3.1.8"
   isar_generator:
     dependency: "direct dev"
     description:
