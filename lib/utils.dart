@@ -182,6 +182,9 @@ bool get isAndroid => !isWeb && Platform.isAndroid;
 /// Указывает, что приложение запущено на iOS
 bool get isiOS => !isWeb && Platform.isIOS;
 
+/// Указывает, что приложение запущено на Aurora
+bool get isAurora => !isWeb && kIsAurora;
+
 /// Указывает, что приложение запущено на Desktop-платформе.
 ///
 /// ```dart
